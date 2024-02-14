@@ -1,28 +1,35 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
 
-using namespace std;
+// Функція для обчислення середнього арифметичного значень елементів масиву
+double average(const int arr[], int size) {
+    double sum = 0.0;
+    for (int i = 0; i < size; ++i) {
+        sum += arr[i];
+    }
+    return sum / size;
+}
 
 int main() {
-    int arraySize; 
-    cout << "Введіть розмір масиву: ";
-    cin >> arraySize; 
+    const int arraySize = 5; // Розмір масиву
+    int myArray[arraySize]; // Оголошення масиву
 
-    int myArray[arraySize]; 
-
-    srand(time(0));
-
-    
+    // Заповнення масиву
+    std::cout << "Введіть " << arraySize << " елементів масиву:\n";
     for (int i = 0; i < arraySize; ++i) {
-        myArray[i] = rand() % 100; 
+        std::cout << "Елемент " << i << ": ";
+        std::cin >> myArray[i];
     }
 
-    cout << "Масив: ";
+    // Виведення масиву
+    std::cout << "Вміст масиву:\n";
     for (int i = 0; i < arraySize; ++i) {
-        cout << myArray[i] << " ";
+        std::cout << myArray[i] << " ";
     }
-    cout << endl;
+    std::cout << std::endl;
+
+    // Обчислення та виведення середнього арифметичного
+    std::cout << "Середнє арифметичне значень елементів масиву: " << average(myArray, arraySize) << std::endl;
 
     return 0;
 }
+
