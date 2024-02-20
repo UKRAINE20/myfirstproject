@@ -3,20 +3,9 @@ using namespace std;
 double average(const int arr[], int size) {
   double sum = 0.0;
   for (int i = 0; i < size; ++i) {
+    sum += arr[i];
   }
-  sum += arr[i];
-}
-return sum / size;
-}
-
-int min(const int arr[], int size) {
-    int min = arr[0];
-    for (int i = 1; i < size; ++i) {
-        if (arr[i] < min) {
-            min = arr[i];
-        }
-    }
-    return min;
+  return sum / size;
 }
 
 int main() {
@@ -33,11 +22,10 @@ int main() {
   for (int i = 0; i < arraySize; ++i) {
     std::cout << myArray[i] << " ";
   }
+  cout << endl;
 
   cout << "Середнє арифметичне значень елементів масиву: "
        << average(myArray, arraySize) << endl;
-
-  cout << "Мінімальний елемент масиву: " << min(myArray, arraySize) << endl;
 
   return 0;
 }
